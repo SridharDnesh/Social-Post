@@ -4,8 +4,11 @@ if (process.env.NODE_ENV !== "production") {
 
 const express = require("express");
 require("./db"); //loads the local connection
-
+const cors = require("cors");
 const app = express();
+
+app.use(express.json());
+app.use(cors());
 
 /**
  * ROUTES IMPORT
