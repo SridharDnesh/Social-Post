@@ -8,7 +8,6 @@ const Image = require("../db/models/Posts");
  * MULTER CONFIG
  */
 const multer = require("multer");
-const { text } = require("express");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
