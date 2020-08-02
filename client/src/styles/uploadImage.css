@@ -1,0 +1,166 @@
+* Card Wrapper */ .card-wrapper {
+  min-width: 375px;
+}
+
+/* Card style */
+.card-container {
+  background: #f0f2f5;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/* Dog photo style */
+.avatar {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px #dadde1 solid;
+}
+
+@media (max-width: 320px) {
+  .avatar {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+
+/* Textarea + Icon Div Style */
+.post-container {
+  height: 100%;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+/* Textarea style */
+.post-text {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  background-color: transparent;
+  resize: none;
+  width: 100%;
+}
+
+@media (max-width: 320px) {
+  /* .post-text {
+    font-size: 14px !important;
+  } */
+}
+
+/* Post button style */
+.post-button {
+  padding: 10px 0;
+  min-width: 125px;
+}
+
+.post-photo {
+  align-self: center;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 1px #dadde5 solid;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .post-photo {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.multiple {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding: 0 10px;
+}
+
+.first-image {
+  position: relative;
+}
+
+.close-icon-container {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+}
+
+.close-icon {
+  font-size: small;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #8a8a8a;
+  pointer-events: none;
+}
+
+/* File Input Styles */
+
+input[type="file"] {
+  display: none;
+}
+
+/* Upload ready photo style */
+.photo-button-label {
+  margin: 0;
+  cursor: pointer;
+  padding: 10px 0;
+  min-width: 125px;
+}
+
+/* Disabling the input */
+.disable-input {
+  cursor: not-allowed;
+  background-color: aqua;
+  border-color: blue;
+}
+
+.character-count-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.character-count {
+  padding: 0 10px;
+  color: rgba(119, 136, 153, 0.596);
+}
+
+.textarea-wrapper {
+  position: relative;
+  /* display: inline-block; */
+}
+
+/* Add photo button styles */
+.photo-button-label {
+  font-size: 10px;
+}
+@media (min-width: 425px) {
+  .photo-button-label span {
+    font-size: 20px;
+  }
+}
+
+.load {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.disable-input-label {
+  cursor: not-allowed !important;
+}
