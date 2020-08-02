@@ -11,6 +11,10 @@ Frontend Technology:
 - Bootstrap
 - react-bootstrap (for better optimization)
 
+> To run the server type **'npm run dev'**
+> To run the client type **'npm start'**
+
+
 ## Server
 You can call the two endpoints provided, one for saving the photo to the database and another endpoint for retrieving the posted image.
 
