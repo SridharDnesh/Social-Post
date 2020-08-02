@@ -8,6 +8,9 @@ const mongo_option = {
   useUnifiedTopology: true,
 };
 
+/**
+ * MONGO URL CONNECTION (setup mongo atlas key in .env (or) local db will be activated)
+ */
 if (process.env.MONGO_URI) {
   mongoose.connect(process.env.MONGO_URI, mongo_option);
   MONGO_URL = process.env.MONGO_URI;
