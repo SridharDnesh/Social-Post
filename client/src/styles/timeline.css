@@ -1,3 +1,10 @@
+.wrapper-post {
+  background-color: #f0f2f5;
+  border-radius: 30px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
 .timeline-empty-text {
   text-align: center;
   color: rgba(255, 255, 255, 0.815);
@@ -21,6 +28,10 @@
 }
 
 /* Avatar */
+.avatar-container {
+  margin: 0 10px 0 0;
+}
+
 .avatar {
   width: 60px;
   height: 60px;
@@ -40,10 +51,7 @@
   }
 }
 
-.avatar-container {
-  margin: 0 10px 0 0;
-}
-
+/* Row 1 Col 2 */
 .user-name-container {
   margin: 0 0 0 10px;
 }
@@ -74,25 +82,15 @@
   font-size: 15px;
 }
 
+/* Row 3 */
 .like-comment-share-container {
   height: 50px;
 }
-
-/* .like-comment-share-container span {
-  font-size: 4vw;
-} */
 
 @media (min-width: 425px) {
   .like-comment-share-container span {
     font-size: 20px;
   }
-}
-
-.wrapper-post {
-  background-color: #f0f2f5;
-  border-radius: 30px;
-  max-height: 500px;
-  overflow: hidden;
 }
 
 .like-button {
