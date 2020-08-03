@@ -19,10 +19,10 @@ export default class Timeline extends Component {
     const { imgSrc, text } = this.props.postData;
     return (
       <React.Fragment>
-        <section class="middle">
-          <div class="container">
-            <hr />
-            <div class="middle-content">
+        <section className="middle">
+          <div className="container">
+            <hr className="hr-break" />
+            <div className="middle-content">
               {this.props.timelineEmptyFlag && (
                 <p>Sorry! No posts available :</p>
               )}
@@ -30,36 +30,38 @@ export default class Timeline extends Component {
           </div>
         </section>
 
-        <section class="bottom">
-          <div class="container">
+        <section className="bottom">
+          <div className="container">
             {!this.props.timelineEmptyFlag && (
               <React.Fragment>
-                <div class="card-container timeline-card-container">
-                  <div class="card-top timeline-card-top">
-                    <div class="top-left timeline-top-left">
-                      <div class="avatar">
+                <div className="card-container timeline-card-container">
+                  <div className="card-top timeline-card-top">
+                    <div className="top-left timeline-top-left">
+                      <div className="avatar">
                         <img src="images/avatar.jpg" alt="Avatar" />
                       </div>
-                      <div class="avatar-details">
+                      <div className="avatar-details">
                         <h4>Angelina John</h4>
                         <p>Passionate hair stylist</p>
                       </div>
                     </div>
-                    <div class="top-right timeline-top-right">
+                    <div className="top-right timeline-top-right">
                       <p>Just now</p>
                     </div>
                   </div>
                   {!!this.props.postData.text && (
-                    <div class="card-middle timeline-card-middle">{text}</div>
+                    <div className="card-middle timeline-card-middle">
+                      {text}
+                    </div>
                   )}
                   {!!this.props.postData.imgSrc && (
-                    <div class="card-bottom timeline-card-bottom">
+                    <div className="card-bottom timeline-card-bottom">
                       <img src={imgSrc} alt="" />
                     </div>
                   )}
-                  <div class="like-comment-share">
+                  <div className="like-comment-share">
                     <span onClick={this.likeHandler}>
-                      {/* <i class="far fa-heart lcs"></i> */}
+                      {/* <i className="far fa-heart lcs"></i> */}
                       {this.state.likeCount > 0 ? (
                         <i className="fas fa-heart lcs-liked"></i>
                       ) : (
@@ -67,13 +69,15 @@ export default class Timeline extends Component {
                       )}
                     </span>
                     <span>
-                      <i class="far fa-comment lcs"></i>
+                      <i className="far fa-comment lcs"></i>
                     </span>
                     <span>
-                      <i class="fas fa-share lcs"></i>
+                      <i className="fas fa-share lcs"></i>
                     </span>
                     <span>
-                      {this.state.likeCount > 0 && (
+                      {this.state.likeCount > 0 ? (
+                        <span>{this.state.likeCount} likes</span>
+                      ) : (
                         <span>{this.state.likeCount} likes</span>
                       )}
                     </span>

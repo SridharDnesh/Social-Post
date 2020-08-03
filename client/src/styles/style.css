@@ -229,6 +229,7 @@ nav {
 .card-bottom {
   padding: 1.5rem 0.8rem 1rem 1.3rem;
   background-color: #fff;
+  transition: all 0.3s ease-in-out;
 }
 
 .image-placeholder {
@@ -284,6 +285,7 @@ nav {
   font-size: 1.5rem;
   align-self: flex-start;
   height: 7.5rem;
+  font-family: "Poppins", sans-serif;
 }
 
 .textarea-container span {
@@ -317,7 +319,7 @@ nav {
   margin-bottom: 0;
   padding: 0.5rem;
   text-align: center;
-  background-color: #575656;
+  background-color: #57565673;
   width: 25rem;
   border-radius: 2rem;
   font-size: 1.4rem;
@@ -332,8 +334,11 @@ nav {
 }
 
 .timeline-card-container {
+  max-height: 60rem;
+  /* Custom */
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   /* Mobile sizes */
-  grid-template-rows: 0.1fr 0.1fr 1fr 0.1fr;
+  /* grid-template-rows: 0.1fr 0.1fr 1fr 0.1fr; */
   /* Tablet sizes */
   /* grid-template-rows: 1fr 1fr 45rem 4rem;  */
 }
@@ -341,11 +346,13 @@ nav {
 .timeline-card-top {
   display: flex;
   justify-content: space-between;
+  transition: all 0.3s ease-in-out;
 }
 
 .timeline-top-right {
   margin: 0;
   margin: 0 1rem;
+  justify-content: flex-end;
 }
 
 .timeline-top-right p {
@@ -364,6 +371,12 @@ nav {
 
 .timeline-card-bottom {
   padding: 0;
+  text-align: center;
+}
+
+.timeline-card-bottom img {
+  width: 57rem;
+  height: 45rem;
 }
 
 .like-comment-share {
@@ -466,6 +479,10 @@ nav {
   .nav-link:hover::before {
     transform: scaleX(1);
   }
+}
+
+.hr-break {
+  border: 1px solid #6b6b6b69;
 }
 
 /* FROM OLD FILE */

@@ -172,7 +172,7 @@ class UploadImage extends Component {
                           : ""
                       }`}
                     >
-                      <i className="far fa-images"></i> <span>Add</span>
+                      <span>Add</span>
                     </label>
                     {/* <button>
                       <span className="icon-add">
@@ -195,7 +195,6 @@ class UploadImage extends Component {
                       form="post-form"
                       className="post-button"
                     >
-                      <i className="fas fa-paper-plane load"></i>
                       <span>Post</span>
                     </button>
                   </div>
