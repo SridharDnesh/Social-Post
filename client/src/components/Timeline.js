@@ -63,7 +63,7 @@ export default class Timeline extends Component {
                     <span onClick={this.likeHandler}>
                       {/* <i className="far fa-heart lcs"></i> */}
                       {this.state.likeCount > 0 ? (
-                        <i className="fas fa-heart lcs-liked"></i>
+                        <i className="fas fa-heart lcs lcs-liked"></i>
                       ) : (
                         <i className="far fa-heart lcs "></i>
                       )}
