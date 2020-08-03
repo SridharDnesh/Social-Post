@@ -23,7 +23,9 @@ export default class Timeline extends Component {
           <div class="container">
             <hr />
             <div class="middle-content">
-              <p>Sorry! No posts available :(</p>
+              {this.props.timelineEmptyFlag && (
+                <p>Sorry! No posts available :(</p>
+              )}
             </div>
           </div>
         </section>
