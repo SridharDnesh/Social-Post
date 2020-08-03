@@ -120,6 +120,7 @@ export default class uploadImage extends Component {
           this.props.setTimeout(this.showPosts, 2000);
         });
     } catch (err) {
+      console.log(err);
       if (err.response.status === 500) {
         console.log(err.response);
         this.setState({

@@ -24,7 +24,7 @@ export default class Timeline extends Component {
             <hr />
             <div class="middle-content">
               {this.props.timelineEmptyFlag && (
-                <p>Sorry! No posts available :(</p>
+                <p>Sorry! No posts available :</p>
               )}
             </div>
           </div>
@@ -32,34 +32,55 @@ export default class Timeline extends Component {
 
         <section class="bottom">
           <div class="container">
-            <div class="card-container timeline-card-container">
-              <div class="card-top timeline-card-top">
-                <div class="top-left timeline-top-left">
-                  <div class="avatar">
-                    <img src="images/avatar.jpg" alt="Avatar" />
+            {!this.props.timelineEmptyFlag && (
+              <React.Fragment>
+                <div class="card-container timeline-card-container">
+                  <div class="card-top timeline-card-top">
+                    <div class="top-left timeline-top-left">
+                      <div class="avatar">
+                        <img src="images/avatar.jpg" alt="Avatar" />
+                      </div>
+                      <div class="avatar-details">
+                        <h4>Angelina John</h4>
+                        <p>Passionate hair stylist</p>
+                      </div>
+                    </div>
+                    <div class="top-right timeline-top-right">
+                      <p>Just now</p>
+                    </div>
                   </div>
-                  <div class="avatar-details">
-                    <h4>Angelina John</h4>
-                    <p>Passionate hair stylist</p>
+                  {!!this.props.postData.text && (
+                    <div class="card-middle timeline-card-middle">{text}</div>
+                  )}
+                  {!!this.props.postData.imgSrc && (
+                    <div class="card-bottom timeline-card-bottom">
+                      <img src={imgSrc} alt="" />
+                    </div>
+                  )}
+                  <div class="like-comment-share">
+                    <span onClick={this.likeHandler}>
+                      {/* <i class="far fa-heart lcs"></i> */}
+                      {this.state.likeCount > 0 ? (
+                        <i className="fas fa-heart lcs-liked"></i>
+                      ) : (
+                        <i className="far fa-heart lcs "></i>
+                      )}
+                    </span>
+                    <span>
+                      <i class="far fa-comment lcs"></i>
+                    </span>
+                    <span>
+                      <i class="fas fa-share lcs"></i>
+                    </span>
+                    <span>
+                      {this.state.likeCount > 0 && (
+                        <span>{this.state.likeCount} likes</span>
+                      )}
+                    </span>
                   </div>
                 </div>
-                <div class="top-right timeline-top-right">
-                  <p>Just now</p>
-                </div>
-              </div>
-              <div class="card-middle timeline-card-middle">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
-                odio? Expedita dignissimos asperiores nesciunt possimus.
-              </div>
-              <div class="card-bottom timeline-card-bottom">
-                <img src="images/preview-image.jpg" alt="" />
-              </div>
-              <div class="like-comment-share">
-                <i class="far fa-heart lcs"></i>
-                <i class="far fa-comment lcs"></i>
-                <i class="fas fa-share lcs"></i>
-              </div>
-            </div>
+              </React.Fragment>
+            )}
           </div>
         </section>
       </React.Fragment>
