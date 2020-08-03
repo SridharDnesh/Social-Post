@@ -1,5 +1,5 @@
-body {
-  /* background-color: #ffffff; */
+/* body {
+  background-color: #ffffff;
   background-color: #55b9f3 !important;
   padding: 0;
   margin: 0;
@@ -20,4 +20,20 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+} */
+
+/* Global styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "Nunito", sans-serif;
+  font-size: 10px;
+  box-sizing: border-box;
+  background: #9ca5ab;
 }

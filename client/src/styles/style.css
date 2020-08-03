@@ -1,0 +1,433 @@
+/* Global Styles */
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+/* Header */
+header {
+  width: 100%;
+  height: 5rem;
+  /* These below rules are added to make the navbar stay at the top all the time */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* NAVIGATION STARTS */
+
+/* Making nav to flex in row */
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Logo size */
+.nav-brand {
+  width: 2rem;
+}
+
+/* Hamburger Icon size and color and pointer */
+.menu-icons i {
+  font-size: 3.5rem;
+  color: #fafafa;
+  cursor: pointer;
+}
+
+/* Close icon color */
+.close i {
+  color: #eb648c;
+}
+
+/* Making the mobile sidenav */
+.nav-list {
+  width: 25rem;
+  height: 100vh;
+  background-color: #d7d4ed;
+  position: fixed;
+  top: 0;
+  /* To make the sidenav out of the view-port we set the right to -26rem because the width is 25rem */
+  right: -26rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1500;
+  transition: all 650ms ease-in-out;
+}
+
+/* This class is enabled by JS to open the sidebar */
+.nav-list.active {
+  right: 0;
+}
+
+/* Position the close icon */
+.close {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+}
+
+/* List item in sidebar */
+.nav-item {
+  margin: 1.5rem 0;
+}
+
+/* Links present in the list item */
+.nav-link {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  /* color: rgba(0, 0, 0, 0.7); */
+}
+
+/* NAVIGATION ENDS */
+
+/* Container is present in header, section .... So it wont go beyond that and setting max-width is important because for consistency across mobile devices */
+.container {
+  width: 100%;
+  /* max-width: 70rem; */
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* CUSTOM STYLES */
+.nav-container {
+  max-width: 100%;
+}
+
+.card-container {
+  /* transform: translateY(20%); */
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  box-shadow: 0 0 0.5rem gray;
+}
+
+.card-top {
+  background-color: rgb(194, 194, 194, 1);
+}
+
+.top-left {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.top-right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+/* TOP LEFT CONTENT */
+.avatar img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px #fafafa solid;
+}
+
+.avatar {
+  padding: 1rem;
+}
+
+.avatar-details h4 {
+  font-size: 1.8rem;
+  color: #000000;
+}
+
+.avatar-details p {
+  font-size: 1.2rem;
+  color: #575656;
+}
+
+/* TOP LEFT CONTENT ENDS */
+
+/* TOP RIGHT CONTENT */
+
+.top-right button {
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
+  border: 1.2px #000000 solid;
+  margin: 0 1.2rem;
+  width: 100%;
+  max-width: 8.5rem;
+  cursor: pointer;
+}
+
+.icon-add i {
+  display: inline-block;
+  transform: translateY(2%);
+}
+
+/* TOP RIGHT CONTENT ENDS */
+
+/* BOTTOM CONTENT STARTS */
+
+.card-bottom {
+  padding: 1.5rem 0.8rem 1rem 1.3rem;
+  background-color: #fff;
+}
+
+.image-placeholder {
+  width: 15rem;
+  height: 10rem;
+  margin-bottom: 1.8rem;
+}
+
+.image-placeholder {
+  position: relative;
+}
+
+.image-placeholder span {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.image-placeholder span i {
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.textarea-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.textarea-container textarea {
+  resize: none;
+  margin-right: 0.8rem;
+  width: 90%;
+  border: none;
+  outline: none;
+  padding: 1rem 1rem 1rem 0;
+  font-size: 1.5rem;
+  align-self: flex-start;
+  height: 7.5rem;
+}
+
+.textarea-container span {
+  color: rgb(117, 117, 117);
+  padding-right: 1rem;
+}
+
+.hero {
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Card ENDS */
+
+/* Timeline Starts */
+.middle {
+  padding: 1rem 0;
+}
+
+.middle-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle-content p {
+  margin: 1rem;
+  margin-bottom: 0;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #575656;
+  width: 25rem;
+  border-radius: 2rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.6px;
+}
+
+/* MIDDLE CONTENT ENDS */
+
+/* TIMELINE CONTENT STARTS */
+.bottom {
+  padding-top: 0;
+}
+
+.timeline-card-container {
+  /* Mobile sizes */
+  grid-template-rows: 0.1fr 0.1fr 1fr 0.1fr;
+  /* Tablet sizes */
+  /* grid-template-rows: 1fr 1fr 45rem 4rem;  */
+}
+
+.timeline-card-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.timeline-top-right {
+  margin: 0;
+  margin: 0 1rem;
+}
+
+.timeline-top-right p {
+  font-size: 1.3rem;
+  color: #e0e0e0;
+  background-color: #5756567a;
+  padding: 0.1rem 0.7rem;
+  border-radius: 2rem;
+}
+
+.timeline-card-middle {
+  background-color: #fff;
+  padding: 1rem;
+  font-size: 1.4rem;
+}
+
+.timeline-card-bottom {
+  padding: 0;
+}
+
+.like-comment-share {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.lcs {
+  margin: 0 2rem;
+}
+
+/* For LIKE button to turn red */
+.lcs-liked {
+  color: red;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 490px) {
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+  }
+  .top-right button {
+    width: 8.5rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .image-placeholder {
+    width: 18rem;
+    height: 10rem;
+    margin-bottom: 1.8rem;
+  }
+}
+
+/* ENDS */
+
+/* Media Queries */
+@media screen and (min-width: 700px) {
+  header {
+    height: 8rem;
+  }
+
+  .nav-brand {
+    width: 3.5rem;
+  }
+
+  .nav-list {
+    width: initial;
+    height: initial;
+    background-color: transparent;
+    position: initial;
+    top: initial;
+    right: initial;
+    flex-direction: row;
+    transition: initial;
+  }
+
+  .menu-icons {
+    display: none;
+  }
+
+  .nav-item {
+    margin: 0 2.5rem;
+  }
+
+  .nav-link,
+  .current {
+    color: #fafafa;
+    position: relative;
+    font-size: 1.3rem;
+  }
+
+  .nav-link::before,
+  .current::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    background-color: #eb648c;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 650ms;
+  }
+
+  .current::before {
+    transform: scaleX(1);
+  }
+
+  .nav-link:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+/* FROM OLD FILE */
+input[type="file"] {
+  display: none;
+}

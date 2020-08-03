@@ -1,16 +1,8 @@
-import React, { Component } from "react";
-import Timeline from "./Timeline";
-import ReactTimeout from "react-timeout";
+import React, { Component, Fragment } from "react";
+import Navbar from "./navbar";
+import "../styles/style.css";
 
-import axios from "axios";
-import "../styles/uploadImage.css";
-// Bootstrap Import
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
-
-class UploadImage extends Component {
+export default class uploadImage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -150,153 +142,101 @@ class UploadImage extends Component {
       message: "",
     });
   };
-
+  // ======================================RENDER================
   render() {
     return (
-      <React.Fragment>
-        {/* ========================================Alert=================================== */}
-        {!!this.state.message && (
-          <div
-            className="alert alert-info alert-dismissible fade show"
-            role="alert"
-          >
-            <strong>{this.state.message}</strong>
-            <button
-              type="button"
-              className="close"
-              data-dismiss="alert"
-              aria-label="Close"
-              onClick={this.onAlertClose}
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-        )}
-        {/*========================================== PostBox =================================== */}
-        <Container className="card-wrapper">
-          <Row className="d-flex justify-content-center ">
-            <Col lg={8} md={10}>
-              <div className="card-container">
-                {/* inner Container */}
-                <Row>
-                  <Col
-                    xs={2}
-                    className="d-flex align-items-center justify-content-center"
-                  >
-                    <img className="avatar" src="avatar.jpg" alt="Avatar" />
-                  </Col>
-                  <Col
-                    xs={10}
-                    className="d-flex align-items-center justify-content-center"
-                  >
-                    <div className="post-container">
-                      <form id="post-form" onSubmit={this.onFormSubmit}>
-                        <div className="textarea-wrapper">
-                          <Row>
-                            <textarea
-                              value={this.state.text}
-                              onChange={this.handleTextChange}
-                              name="text"
-                              maxLength="120"
-                              className="post-text"
-                              placeholder="Whats on your mind, John Doe?"
-                              wrap="hard"
-                              rows="2"
-                            ></textarea>
-                          </Row>
-                          <Row className="character-count-container">
-                            <span className="character-count">
-                              {this.state.charactersLeft}/120
-                            </span>
-                          </Row>
-                        </div>
-                        <div className="multiple">
-                          <div className="first-image">
-                            {/* This content is dynamic, render the selected photo */}
-
-                            {!!this.state.imagePreview && (
-                              <React.Fragment>
-                                <img
-                                  className="post-photo"
-                                  src={this.state.imagePreview}
-                                  alt=""
-                                />
-                                <div
-                                  onClick={this.onCloseButtonClick}
-                                  className="close-icon-container"
-                                >
-                                  <i className="fas fa-times close-icon"></i>
-                                </div>
-                              </React.Fragment>
-                            )}
-                          </div>
-                        </div>
-                      </form>
+      <Fragment>
+        <Navbar />
+        <main>
+          <section class="hero">
+            <div class="container">
+              <div class="card-container">
+                <div class="card-top">
+                  <div class="top-left">
+                    <div class="avatar">
+                      <img src="images/avatar.jpg" alt="Avatar" />
                     </div>
-                  </Col>
-                </Row>
-                <hr />
-                {/*=========================== Buttons ==========================================*/}
-                <Row className="d-flex align-items-center justify-content-center">
-                  <Col
-                    xs={6}
-                    className="d-flex align-items-center justify-content-center h-50"
-                  >
-                    {/*------------- Add Photo button ----------------*/}
-                    <label
-                      htmlFor="file-upload"
-                      className={`photo-button-label btn btn-outline-secondary ${
-                        this.state.isUploadButtonDisabled
-                          ? "disable-input-label"
-                          : ""
-                      }`}
-                    >
-                      <i className="far fa-images"></i> Add photo
-                    </label>
-
-                    <input
-                      id="file-upload"
-                      type="file"
-                      accept="image/*"
-                      disabled={
-                        this.state.imagePreview.length > 0 ? true : false
-                      }
-                      onChange={this.onInputChange}
-                      ref={(ref) => (this.fileInput = ref)}
-                    />
-                  </Col>
-                  <Col
-                    xs={6}
-                    className="d-flex align-items-center justify-content-center h-50"
-                  >
-                    {/*-------------------- Post Button -------------------------*/}
-                    <Button
-                      variant="outline-success"
-                      className="post-button"
-                      type="submit"
-                      form="post-form"
-                    >
-                      {!this.state.isLoading ? (
-                        <i className="fas fa-paper-plane load"></i>
-                      ) : (
-                        <span className="spinner-border spinner-border-sm load"></span>
-                      )}
-                      Post
-                    </Button>
-                  </Col>
-                </Row>
+                    <div class="avatar-details">
+                      <h4>Angelina John</h4>
+                      <p>Passionate hair stylist</p>
+                    </div>
+                  </div>
+                  <div class="top-right">
+                    <button>
+                      <span class="icon-add">
+                        <i class="far fa-image"></i>
+                      </span>{" "}
+                      Add
+                    </button>
+                    <button>Post</button>
+                  </div>
+                </div>
+                <div class="card-bottom">
+                  <div class="image-placeholder">
+                    <span>
+                      {" "}
+                      <i class="far fa-times-circle"></i>{" "}
+                    </span>
+                    <img src="images/preview-image.jpg" alt="" />
+                  </div>
+                  <div class="textarea-container">
+                    <textarea
+                      name="text"
+                      id="text"
+                      placeholder="Hey! Try something here"
+                      maxlength="120"
+                    ></textarea>
+                    <span>120/120</span>
+                  </div>
+                </div>
               </div>
-            </Col>
-          </Row>
-        </Container>
-        {/* ========================================Timeline Component=================================== */}
-        <Timeline
-          postData={this.state.postData}
-          timelineEmptyFlag={this.state.timelineEmptyFlag}
-        />
-      </React.Fragment>
+            </div>
+          </section>
+
+          <section class="middle">
+            <div class="container">
+              <hr />
+              <div class="middle-content">
+                <p>Sorry! No posts available :(</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="bottom">
+            <div class="container">
+              <div class="card-container timeline-card-container">
+                <div class="card-top timeline-card-top">
+                  <div class="top-left timeline-top-left">
+                    <div class="avatar">
+                      <img src="images/avatar.jpg" alt="Avatar" />
+                    </div>
+                    <div class="avatar-details">
+                      <h4>Angelina John</h4>
+                      <p>Passionate hair stylist</p>
+                    </div>
+                  </div>
+                  <div class="top-right timeline-top-right">
+                    <p>Just now</p>
+                  </div>
+                </div>
+                <div class="card-middle timeline-card-middle">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Fugit, odio? Expedita dignissimos asperiores nesciunt
+                  possimus.
+                </div>
+                <div class="card-bottom timeline-card-bottom">
+                  <img src="images/preview-image.jpg" alt="" />
+                </div>
+                <div class="like-comment-share">
+                  <i class="far fa-heart lcs"></i>
+                  <i class="far fa-comment lcs"></i>
+                  <i class="fas fa-share lcs"></i>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </Fragment>
     );
   }
 }
-
-export default ReactTimeout(UploadImage);
