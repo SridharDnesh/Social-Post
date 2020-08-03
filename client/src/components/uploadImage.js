@@ -3,8 +3,9 @@ import axios from "axios";
 import Navbar from "./navbar";
 import Timeline from "./Timeline";
 import "../styles/style.css";
+import ReactTimeout from "react-timeout";
 
-export default class uploadImage extends Component {
+class UploadImage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -151,20 +152,20 @@ export default class uploadImage extends Component {
       <Fragment>
         <Navbar />
         <main>
-          <section class="hero">
-            <div class="container">
-              <div class="card-container">
-                <div class="card-top">
-                  <div class="top-left">
-                    <div class="avatar">
+          <section className="hero">
+            <div className="container">
+              <div className="card-container">
+                <div className="card-top">
+                  <div className="top-left">
+                    <div className="avatar">
                       <img src="images/avatar.jpg" alt="Avatar" />
                     </div>
-                    <div class="avatar-details">
+                    <div className="avatar-details">
                       <h4>Angelina John</h4>
                       <p>Passionate hair stylist</p>
                     </div>
                   </div>
-                  <div class="top-right">
+                  <div className="top-right">
                     {/* Label addition */}
                     <label
                       htmlFor="file-upload"
@@ -177,8 +178,8 @@ export default class uploadImage extends Component {
                       <i className="far fa-images"></i> Add photo
                     </label>
                     {/* <button>
-                      <span class="icon-add">
-                        <i class="far fa-image"></i>
+                      <span className="icon-add">
+                        <i className="far fa-image"></i>
                       </span>
                       Add
                     </button> */}
@@ -202,24 +203,24 @@ export default class uploadImage extends Component {
                     </button>
                   </div>
                 </div>
-                <div class="card-bottom">
+                <div className="card-bottom">
                   <form id="post-form" onSubmit={this.onFormSubmit}>
-                    <div class="image-placeholder">
+                    <div className="image-placeholder">
                       {!!this.state.imagePreview && (
                         <React.Fragment>
                           <span onClick={this.onCloseButtonClick}>
-                            <i class="far fa-times-circle"></i>
+                            <i className="far fa-times-circle"></i>
                           </span>
                           <img src={this.state.imagePreview} alt="" />
                         </React.Fragment>
                       )}
                     </div>
-                    <div class="textarea-container">
+                    <div className="textarea-container">
                       <textarea
                         name="text"
                         id="text"
                         placeholder="Hey! Try something here"
-                        maxlength="120"
+                        maxLength="120"
                         value={this.state.text}
                         onChange={this.handleTextChange}
                       ></textarea>
@@ -241,3 +242,5 @@ export default class uploadImage extends Component {
     );
   }
 }
+
+export default ReactTimeout(UploadImage);
