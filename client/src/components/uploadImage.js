@@ -172,22 +172,24 @@ export default class uploadImage extends Component {
                   </div>
                 </div>
                 <div class="card-bottom">
-                  <div class="image-placeholder">
-                    <span>
-                      {" "}
-                      <i class="far fa-times-circle"></i>{" "}
-                    </span>
-                    <img src="images/preview-image.jpg" alt="" />
-                  </div>
-                  <div class="textarea-container">
-                    <textarea
-                      name="text"
-                      id="text"
-                      placeholder="Hey! Try something here"
-                      maxlength="120"
-                    ></textarea>
-                    <span>120/120</span>
-                  </div>
+                  <form id="post-form" onSubmit={this.onFormSubmit}>
+                    <div class="image-placeholder">
+                      <span>
+                        {" "}
+                        <i class="far fa-times-circle"></i>{" "}
+                      </span>
+                      <img src="images/preview-image.jpg" alt="" />
+                    </div>
+                    <div class="textarea-container">
+                      <textarea
+                        name="text"
+                        id="text"
+                        placeholder="Hey! Try something here"
+                        maxlength="120"
+                      ></textarea>
+                      <span>120/120</span>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
