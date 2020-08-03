@@ -190,7 +190,14 @@ export default class uploadImage extends Component {
                       onChange={this.onInputChange}
                       ref={(ref) => (this.fileInput = ref)}
                     />
-                    <button>Post</button>
+                    <button>
+                      {!this.state.isLoading ? (
+                        <i className="fas fa-paper-plane load"></i>
+                      ) : (
+                        <span className="spinner-border spinner-border-sm load"></span>
+                      )}
+                      Post
+                    </button>
                   </div>
                 </div>
                 <div class="card-bottom">

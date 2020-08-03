@@ -448,3 +448,8 @@ input[type="file"] {
 .disable-input-label {
   cursor: not-allowed !important;
 }
+
+.load {
+  display: inline-block;
+  margin-right: 10px;
+}
