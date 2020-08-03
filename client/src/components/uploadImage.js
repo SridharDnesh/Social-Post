@@ -163,12 +163,33 @@ export default class uploadImage extends Component {
                     </div>
                   </div>
                   <div class="top-right">
-                    <button>
+                    {/* Label addition */}
+                    <label
+                      htmlFor="file-upload"
+                      className={`label-alternate ${
+                        this.state.isUploadButtonDisabled
+                          ? "disable-input-label"
+                          : ""
+                      }`}
+                    >
+                      <i className="far fa-images"></i> Add photo
+                    </label>
+                    {/* <button>
                       <span class="icon-add">
                         <i class="far fa-image"></i>
-                      </span>{" "}
+                      </span>
                       Add
-                    </button>
+                    </button> */}
+                    <input
+                      id="file-upload"
+                      type="file"
+                      accept="image/*"
+                      disabled={
+                        this.state.imagePreview.length > 0 ? true : false
+                      }
+                      onChange={this.onInputChange}
+                      ref={(ref) => (this.fileInput = ref)}
+                    />
                     <button>Post</button>
                   </div>
                 </div>

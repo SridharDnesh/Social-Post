@@ -186,6 +186,16 @@ nav {
   cursor: pointer;
 }
 
+.label-alternate {
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
+  border: 1.2px #000000 solid;
+  margin: 0 1.2rem;
+  width: 100%;
+  max-width: 8.5rem;
+  cursor: pointer;
+}
+
 .icon-add i {
   display: inline-block;
   transform: translateY(2%);
@@ -356,6 +366,9 @@ nav {
   .top-right button {
     width: 8.5rem;
   }
+  .label-alternate {
+    width: 8.5rem;
+  }
 }
 
 @media screen and (min-width: 700px) {
@@ -430,4 +443,8 @@ nav {
 /* FROM OLD FILE */
 input[type="file"] {
   display: none;
+}
+
+.disable-input-label {
+  cursor: not-allowed !important;
 }
