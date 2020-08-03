@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* Global Styles */
 
 a {
@@ -43,8 +50,14 @@ header {
 /* Making nav to flex in row */
 nav {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 1rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -76,11 +89,22 @@ nav {
   top: 0;
   /* To make the sidenav out of the view-port we set the right to -26rem because the width is 25rem */
   right: -26rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   z-index: 1500;
+  -webkit-transition: all 650ms ease-in-out;
+  -o-transition: all 650ms ease-in-out;
   transition: all 650ms ease-in-out;
 }
 
@@ -127,8 +151,11 @@ nav {
 .card-container {
   /* transform: translateY(20%); */
   margin-top: 5rem;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
+  -webkit-box-shadow: 0 0 0.5rem gray;
   box-shadow: 0 0 0.5rem gray;
 }
 
@@ -137,14 +164,23 @@ nav {
 }
 
 .top-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 1rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .top-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 25rem;
   margin: 1.5rem 0 1.5rem 0;
@@ -154,6 +190,7 @@ nav {
 .avatar img {
   width: 50px;
   height: 50px;
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 50%;
   border: 1px #fafafa solid;
@@ -196,8 +233,14 @@ nav {
   max-width: 8.5rem;
   cursor: pointer;
   font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-color: #f0f0f0;
 }
@@ -207,12 +250,20 @@ nav {
 
 .icon-add i {
   display: inline-block;
+  -webkit-transform: translateY(2%);
+  -ms-transform: translateY(2%);
   transform: translateY(2%);
 }
 
 .post-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 0.5rem 2rem;
   margin: 0 1.2rem;
@@ -229,6 +280,8 @@ nav {
 .card-bottom {
   padding: 1.5rem 0.8rem 1rem 1.3rem;
   background-color: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
@@ -242,6 +295,7 @@ nav {
 .image-placeholder img {
   width: 100%;
   height: 10rem;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -265,13 +319,21 @@ nav {
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
 
 .textarea-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
 }
 
@@ -283,6 +345,7 @@ nav {
   outline: none;
   padding: 1rem 1rem 1rem 0;
   font-size: 1.5rem;
+  -ms-flex-item-align: start;
   align-self: flex-start;
   height: 7.5rem;
   font-family: "Poppins", sans-serif;
@@ -295,9 +358,18 @@ nav {
 
 .hero {
   padding-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -309,8 +381,14 @@ nav {
 }
 
 .middle-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -336,6 +414,7 @@ nav {
 .timeline-card-container {
   max-height: 60rem;
   /* Custom */
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   /* Mobile sizes */
   /* grid-template-rows: 0.1fr 0.1fr 1fr 0.1fr; */
@@ -344,14 +423,22 @@ nav {
 }
 
 .timeline-card-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .timeline-top-right {
   margin: 0;
   margin: 0 1rem;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
@@ -381,7 +468,11 @@ nav {
 
 .like-comment-share {
   font-size: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 3rem;
   background-color: #fff;
@@ -401,7 +492,11 @@ nav {
 
 @media screen and (min-width: 490px) {
   .card-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
   }
   .top-right button {
@@ -439,7 +534,12 @@ nav {
     position: initial;
     top: initial;
     right: initial;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-transition: initial;
+    -o-transition: initial;
     transition: initial;
   }
 
@@ -467,16 +567,28 @@ nav {
     background-color: #eb648c;
     width: 100%;
     height: 2px;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
     transform: scaleX(0);
+    -webkit-transform-origin: right;
+    -ms-transform-origin: right;
     transform-origin: right;
+    -webkit-transition: -webkit-transform 650ms;
+    transition: -webkit-transform 650ms;
+    -o-transition: transform 650ms;
     transition: transform 650ms;
+    transition: transform 650ms, -webkit-transform 650ms;
   }
 
   .current::before {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
     transform: scaleX(1);
   }
 
   .nav-link:hover::before {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
     transform: scaleX(1);
   }
 }
@@ -491,7 +603,7 @@ input[type="file"] {
 }
 
 .disable-input-label {
-  cursor: not-allowed !important;
+  cursor: not-allowed;
 }
 
 .load {
