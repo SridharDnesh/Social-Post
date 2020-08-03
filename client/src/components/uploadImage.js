@@ -175,11 +175,14 @@ export default class uploadImage extends Component {
                 <div class="card-bottom">
                   <form id="post-form" onSubmit={this.onFormSubmit}>
                     <div class="image-placeholder">
-                      <span>
-                        {" "}
-                        <i class="far fa-times-circle"></i>{" "}
-                      </span>
-                      <img src="images/preview-image.jpg" alt="" />
+                      {!!this.state.imagePreview && (
+                        <React.Fragment>
+                          <span>
+                            <i class="far fa-times-circle"></i>
+                          </span>
+                          <img src={this.state.imagePreview} alt="" />
+                        </React.Fragment>
+                      )}
                     </div>
                     <div class="textarea-container">
                       <textarea
