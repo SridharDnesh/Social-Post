@@ -13,7 +13,6 @@ class UploadImage extends Component {
       text: "",
       imagePreview: "",
       charactersLeft: 0,
-      isLoading: false,
       postData: {},
       timelineEmptyFlag: true,
       message: "",
@@ -81,7 +80,6 @@ class UploadImage extends Component {
         text = res.data.imageData.text;
       }
       this.setState({
-        isLoading: false,
         timelineEmptyFlag: false,
         postData: {
           imgSrc:
@@ -114,7 +112,6 @@ class UploadImage extends Component {
             text: "",
             imagePreview: "",
             charactersLeft: 0,
-            isLoading: true,
             isUploadButtonDisabled: false,
           });
 
@@ -175,7 +172,7 @@ class UploadImage extends Component {
                           : ""
                       }`}
                     >
-                      <i className="far fa-images"></i> Add photo
+                      <i className="far fa-images"></i> <span>Add</span>
                     </label>
                     {/* <button>
                       <span className="icon-add">
@@ -193,28 +190,28 @@ class UploadImage extends Component {
                       onChange={this.onInputChange}
                       ref={(ref) => (this.fileInput = ref)}
                     />
-                    <button type="submit" form="post-form">
-                      {!this.state.isLoading ? (
-                        <i className="fas fa-paper-plane load"></i>
-                      ) : (
-                        <span className="spinner-border spinner-border-sm load"></span>
-                      )}
-                      Post
+                    <button
+                      type="submit"
+                      form="post-form"
+                      className="post-button"
+                    >
+                      <i className="fas fa-paper-plane load"></i>
+                      <span>Post</span>
                     </button>
                   </div>
                 </div>
                 <div className="card-bottom">
                   <form id="post-form" onSubmit={this.onFormSubmit}>
-                    <div className="image-placeholder">
-                      {!!this.state.imagePreview && (
-                        <React.Fragment>
+                    {!!this.state.imagePreview && (
+                      <React.Fragment>
+                        <div className="image-placeholder">
                           <span onClick={this.onCloseButtonClick}>
                             <i className="far fa-times-circle"></i>
                           </span>
                           <img src={this.state.imagePreview} alt="" />
-                        </React.Fragment>
-                      )}
-                    </div>
+                        </div>
+                      </React.Fragment>
+                    )}
                     <div className="textarea-container">
                       <textarea
                         name="text"
