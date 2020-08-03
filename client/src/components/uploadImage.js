@@ -177,7 +177,7 @@ export default class uploadImage extends Component {
                     <div class="image-placeholder">
                       {!!this.state.imagePreview && (
                         <React.Fragment>
-                          <span>
+                          <span onClick={this.onCloseButtonClick}>
                             <i class="far fa-times-circle"></i>
                           </span>
                           <img src={this.state.imagePreview} alt="" />
