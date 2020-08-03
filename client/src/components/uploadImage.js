@@ -190,7 +190,7 @@ export default class uploadImage extends Component {
                         value={this.state.text}
                         onChange={this.handleTextChange}
                       ></textarea>
-                      <span>120/120</span>
+                      <span>{this.state.charactersLeft}/120</span>
                     </div>
                   </form>
                 </div>
