@@ -186,6 +186,8 @@ export default class uploadImage extends Component {
                         id="text"
                         placeholder="Hey! Try something here"
                         maxlength="120"
+                        value={this.state.text}
+                        onChange={this.handleTextChange}
                       ></textarea>
                       <span>120/120</span>
                     </div>
