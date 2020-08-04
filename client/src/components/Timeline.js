@@ -74,7 +74,7 @@ export default class Timeline extends Component {
                     <span>
                       <i className="fas fa-share lcs"></i>
                     </span>
-                    <span>
+                    <span className="like-count">
                       {this.state.likeCount > 0 ? (
                         <span>{this.state.likeCount} likes</span>
                       ) : (
