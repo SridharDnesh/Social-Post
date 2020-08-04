@@ -84,7 +84,7 @@ nav {
   transition: all 650ms ease-in-out;
 }
 
-/* This class is enabled by JS to open the sidebar */
+/* This class is enabled by JS to open the sidebar. */
 .nav-list.active {
   right: 0;
 }
@@ -374,8 +374,8 @@ nav {
 }
 
 .timeline-card-bottom img {
-  /* width: 57rem;
-  height: 40rem; */
+  width: 100%;
+  height: auto;
 }
 
 .like-comment-share {
@@ -477,6 +477,15 @@ nav {
 
   .nav-link:hover::before {
     transform: scaleX(1);
+  }
+}
+
+/* @media screen and (max-width: 410px) {
+} */
+
+@media screen and (max-width: 500px) {
+  .top-right {
+    width: initial;
   }
 }
 
