@@ -69,7 +69,7 @@ Main layout uses react-bootstrap.
 
 
 ## Screenshots
-[Initial](https://prnt.sc/tslesh)
+[Initial - Deprecated](https://prnt.sc/tslesh)
 
 
-[Final](https://prnt.sc/tslegk)
+[Final - Deprecated](https://prnt.sc/tslegk)
